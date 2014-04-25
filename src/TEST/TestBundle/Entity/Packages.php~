@@ -1,0 +1,80 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Packages
+ *
+ * @ORM\Table(name="packages")
+ * @ORM\Entity
+ */
+class Packages
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="deadline", type="datetime", nullable=true)
+     */
+    private $deadline;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sdi_project_number", type="string", length=45, nullable=true)
+     */
+    private $sdiProjectNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="client_project_number", type="string", length=45, nullable=true)
+     */
+    private $clientProjectNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ts", type="datetime", nullable=false)
+     */
+    private $ts;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\DeliveryBatches
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\DeliveryBatches")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="delivery_batch_id", referencedColumnName="id")
+     * })
+     */
+    private $deliveryBatch;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Titles
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Titles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="title_id", referencedColumnName="id")
+     * })
+     */
+    private $title;
+
+
+}

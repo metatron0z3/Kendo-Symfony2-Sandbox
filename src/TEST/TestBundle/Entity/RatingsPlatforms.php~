@@ -1,0 +1,66 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RatingsPlatforms
+ *
+ * @ORM\Table(name="ratings_platforms")
+ * @ORM\Entity
+ */
+class RatingsPlatforms
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code", type="text", nullable=true)
+     */
+    private $code;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Ratings
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Ratings")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="rating_id", referencedColumnName="id")
+     * })
+     */
+    private $rating;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Platforms
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Platforms")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="platform_id", referencedColumnName="id")
+     * })
+     */
+    private $platform;
+
+
+}

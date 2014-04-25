@@ -1,0 +1,59 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * FranchisesLocalized
+ *
+ * @ORM\Table(name="franchises_localized")
+ * @ORM\Entity
+ */
+class FranchisesLocalized
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="franchiseName", type="text", nullable=true)
+     */
+    private $franchisename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Franchises
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Franchises")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="franchise_id", referencedColumnName="id")
+     * })
+     */
+    private $franchise;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Languages
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Languages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="language_id", referencedColumnName="id")
+     * })
+     */
+    private $language;
+
+
+}

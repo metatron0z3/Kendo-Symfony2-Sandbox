@@ -1,0 +1,42 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PlatformSpecs
+ *
+ * @ORM\Table(name="platform_specs")
+ * @ORM\Entity
+ */
+class PlatformSpecs
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=45, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Platforms
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Platforms")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="platform_id", referencedColumnName="id")
+     * })
+     */
+    private $platform;
+
+
+}

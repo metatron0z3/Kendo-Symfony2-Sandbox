@@ -1,0 +1,30 @@
+franchises:
+    pattern:  /
+    defaults: { _controller: "TestBundle:Franchises:index" }
+
+franchises_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "TestBundle:Franchises:show" }
+
+franchises_new:
+    pattern:  /new
+    defaults: { _controller: "TestBundle:Franchises:new" }
+
+franchises_create:
+    pattern:  /create
+    defaults: { _controller: "TestBundle:Franchises:create" }
+    requirements: { _method: post }
+
+franchises_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "TestBundle:Franchises:edit" }
+
+franchises_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "TestBundle:Franchises:update" }
+    requirements: { _method: post|put }
+
+franchises_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "TestBundle:Franchises:delete" }
+    requirements: { _method: post|delete }

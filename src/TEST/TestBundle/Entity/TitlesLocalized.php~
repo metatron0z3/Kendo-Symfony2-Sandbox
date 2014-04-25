@@ -1,0 +1,87 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TitlesLocalized
+ *
+ * @ORM\Table(name="titles_localized")
+ * @ORM\Entity
+ */
+class TitlesLocalized
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="text", nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="episode_number", type="integer", nullable=true)
+     */
+    private $episodeNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="synposis", type="text", nullable=true)
+     */
+    private $synposis;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="copyright_cline", type="text", nullable=true)
+     */
+    private $copyrightCline;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="original_release_date", type="date", nullable=false)
+     */
+    private $originalReleaseDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Languages
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Languages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="language_id", referencedColumnName="id")
+     * })
+     */
+    private $language;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Titles
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Titles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="title_id", referencedColumnName="id")
+     * })
+     */
+    private $title2;
+
+
+}

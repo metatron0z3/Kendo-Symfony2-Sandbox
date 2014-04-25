@@ -1,0 +1,53 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Seasons
+ *
+ * @ORM\Table(name="seasons")
+ * @ORM\Entity
+ */
+class Seasons
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="number", type="integer", nullable=true)
+     */
+    private $number;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="synopsis_long", type="text", nullable=true)
+     */
+    private $synopsisLong;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="synopsis_short", type="text", nullable=true)
+     */
+    private $synopsisShort;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+
+}

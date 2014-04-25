@@ -1,0 +1,79 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TitleMembers
+ *
+ * @ORM\Table(name="title_members")
+ * @ORM\Entity
+ */
+class TitleMembers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="billing", type="text", nullable=true)
+     */
+    private $billing;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Titles
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Titles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="title_id", referencedColumnName="id")
+     * })
+     */
+    private $title;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Credits
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Credits")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="credit_id", referencedColumnName="id")
+     * })
+     */
+    private $credit;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Members
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Members")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="member_id", referencedColumnName="id")
+     * })
+     */
+    private $member;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Characters
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Characters")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id")
+     * })
+     */
+    private $character;
+
+
+}

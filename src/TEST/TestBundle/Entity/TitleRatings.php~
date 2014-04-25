@@ -1,0 +1,63 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TitleRatings
+ *
+ * @ORM\Table(name="title_ratings")
+ * @ORM\Entity
+ */
+class TitleRatings
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rating_system_id", type="text", nullable=true)
+     */
+    private $ratingSystemId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rating_id", type="text", nullable=true)
+     */
+    private $ratingId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rating_reason", type="text", nullable=true)
+     */
+    private $ratingReason;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Titles
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Titles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="title_id", referencedColumnName="id")
+     * })
+     */
+    private $title;
+
+
+}

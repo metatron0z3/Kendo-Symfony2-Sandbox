@@ -1,0 +1,63 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Clients
+ *
+ * @ORM\Table(name="clients")
+ * @ORM\Entity
+ */
+class Clients
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="text", nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="table", type="text", nullable=true)
+     */
+    private $table;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="itunes_provider", type="text", nullable=true)
+     */
+    private $itunesProvider;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\MasterClients
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\MasterClients")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="master_client", referencedColumnName="id")
+     * })
+     */
+    private $masterClient;
+
+
+}

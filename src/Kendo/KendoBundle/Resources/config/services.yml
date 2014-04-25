@@ -1,0 +1,6 @@
+parameters:
+#    kendo.example.class: Kendo\KendoBundle\Example
+
+services:
+
+

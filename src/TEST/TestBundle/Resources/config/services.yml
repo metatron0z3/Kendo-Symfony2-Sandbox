@@ -1,0 +1,4 @@
+parameters:
+#    test.example.class: TEST\TestBundle\Example
+
+services:

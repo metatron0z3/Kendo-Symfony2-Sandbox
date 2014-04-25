@@ -1,0 +1,15 @@
+TEST\TestBundle\Entity\Clients:
+    type: entity
+    table: clients
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        name:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }

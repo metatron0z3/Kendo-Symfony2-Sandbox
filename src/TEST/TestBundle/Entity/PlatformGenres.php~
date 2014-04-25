@@ -1,0 +1,49 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PlatformGenres
+ *
+ * @ORM\Table(name="platform_genres")
+ * @ORM\Entity
+ */
+class PlatformGenres
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="genre", type="text", nullable=true)
+     */
+    private $genre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Platforms
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Platforms")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="platform_id", referencedColumnName="id")
+     * })
+     */
+    private $platform;
+
+
+}

@@ -1,0 +1,30 @@
+clients:
+    pattern:  /
+    defaults: { _controller: "TestBundle:Clients:index" }
+
+clients_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "TestBundle:Clients:show" }
+
+clients_new:
+    pattern:  /new
+    defaults: { _controller: "TestBundle:Clients:new" }
+
+clients_create:
+    pattern:  /create
+    defaults: { _controller: "TestBundle:Clients:create" }
+    requirements: { _method: post }
+
+clients_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "TestBundle:Clients:edit" }
+
+clients_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "TestBundle:Clients:update" }
+    requirements: { _method: post|put }
+
+clients_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "TestBundle:Clients:delete" }
+    requirements: { _method: post|delete }

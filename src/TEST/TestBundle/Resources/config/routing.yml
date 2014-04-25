@@ -1,0 +1,15 @@
+test_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: TestBundle:Default:index }
+
+TestBundle_clients:
+    resource: "@TestBundle/Resources/config/routing/clients.yml"
+    prefix: /clients
+    
+TestBundle_franchises:
+    resource: "@TestBundle/Resources/config/routing/franchises.yml"
+    prefix: /franchises
+    
+TestBundle_titles:
+    resource: "@TestBundle/Resources/config/routing/titles.yml"
+    prefix: /titles

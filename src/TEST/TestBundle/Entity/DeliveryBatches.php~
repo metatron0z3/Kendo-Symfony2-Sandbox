@@ -1,0 +1,108 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DeliveryBatches
+ *
+ * @ORM\Table(name="delivery_batches")
+ * @ORM\Entity
+ */
+class DeliveryBatches
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="user_id", type="integer", nullable=false)
+     */
+    private $userId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="sdi_deadline", type="date", nullable=false)
+     */
+    private $sdiDeadline;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="client_deadline", type="date", nullable=true)
+     */
+    private $clientDeadline;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sdi_project_number", type="string", length=45, nullable=true)
+     */
+    private $sdiProjectNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="client_project_number", type="string", length=45, nullable=true)
+     */
+    private $clientProjectNumber;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ts", type="datetime", nullable=false)
+     */
+    private $ts;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Clients
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Clients")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     * })
+     */
+    private $client;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Platforms
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Platforms")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="platform_id", referencedColumnName="id")
+     * })
+     */
+    private $platform;
+
+
+}

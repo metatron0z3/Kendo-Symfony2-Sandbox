@@ -1,0 +1,34 @@
+titles:
+    pattern:  /
+    defaults: { _controller: "TestBundle:Titles:index" }
+
+titles_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "TestBundle:Titles:show" }
+
+titles_new:
+    pattern:  /new
+    defaults: { _controller: "TestBundle:Titles:new" }
+    
+titles_add:
+    pattern:  /add
+    defaults: { _controller: "TestBundle:Titles:add" }
+
+titles_create:
+    pattern:  /create
+    defaults: { _controller: "TestBundle:Titles:create" }
+    requirements: { _method: post }
+
+titles_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "TestBundle:Titles:edit" }
+
+titles_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "TestBundle:Titles:update" }
+    requirements: { _method: post|put }
+
+titles_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "TestBundle:Titles:delete" }
+    requirements: { _method: post|delete }

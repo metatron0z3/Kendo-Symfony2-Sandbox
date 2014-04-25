@@ -1,0 +1,59 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * OutputQueue
+ *
+ * @ORM\Table(name="output_queue")
+ * @ORM\Entity
+ */
+class OutputQueue
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=45, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ts", type="datetime", nullable=true)
+     */
+    private $ts;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Packages
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Packages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="package_id", referencedColumnName="id")
+     * })
+     */
+    private $package;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\PlatformOutputs
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\PlatformOutputs")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="platform_output_id", referencedColumnName="id")
+     * })
+     */
+    private $platformOutput;
+
+
+}

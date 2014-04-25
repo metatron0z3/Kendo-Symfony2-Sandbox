@@ -1,0 +1,60 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Countries
+ *
+ * @ORM\Table(name="countries")
+ * @ORM\Entity
+ */
+class Countries
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country_name_english", type="text", nullable=true)
+     */
+    private $countryNameEnglish;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country_name_localized", type="text", nullable=true)
+     */
+    private $countryNameLocalized;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="iso3166", type="text", nullable=true)
+     */
+    private $iso3166;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="flag", type="text", nullable=true)
+     */
+    private $flag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+
+}

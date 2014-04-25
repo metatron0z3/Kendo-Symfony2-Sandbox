@@ -1,0 +1,59 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * OutputQueueAssets
+ *
+ * @ORM\Table(name="output_queue_assets")
+ * @ORM\Entity
+ */
+class OutputQueueAssets
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=45, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ts", type="datetime", nullable=true)
+     */
+    private $ts;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\OutputQueue
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\OutputQueue")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="output_queue_id", referencedColumnName="id")
+     * })
+     */
+    private $outputQueue;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\PackageAssets
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\PackageAssets")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="package_asset_id", referencedColumnName="id")
+     * })
+     */
+    private $packageAsset;
+
+
+}

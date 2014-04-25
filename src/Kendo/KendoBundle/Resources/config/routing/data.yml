@@ -1,0 +1,11 @@
+kendo_data:
+    pattern:  /kendo/data
+    defaults: { _controller: KendoBundle:Data:index }
+
+kendo_data_datasource:
+    pattern:  /kendo/data/datasource
+    defaults: { _controller: "KendoBundle:Data:datasource" }
+    
+data_heirarchicaldatasource:
+    pattern:  /heirarchicaldatasource
+    defaults: { _controller: "KendoBundle:Data:heirarchicaldatasource" }

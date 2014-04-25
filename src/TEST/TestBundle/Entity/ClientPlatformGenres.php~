@@ -1,0 +1,52 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ClientPlatformGenres
+ *
+ * @ORM\Table(name="client_platform_genres")
+ * @ORM\Entity
+ */
+class ClientPlatformGenres
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\ClientGenres
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\ClientGenres")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="client_genre_id", referencedColumnName="id")
+     * })
+     */
+    private $clientGenre;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\PlatformGenres
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\PlatformGenres")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="platform_genre_id", referencedColumnName="id")
+     * })
+     */
+    private $platformGenre;
+
+
+}

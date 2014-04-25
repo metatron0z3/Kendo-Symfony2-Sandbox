@@ -1,0 +1,42 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserLocales
+ *
+ * @ORM\Table(name="user_locales")
+ * @ORM\Entity
+ */
+class UserLocales
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="locale_id", type="integer", nullable=true)
+     */
+    private $localeId;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Users
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+
+}

@@ -1,0 +1,77 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ValidationRulesPlatform
+ *
+ * @ORM\Table(name="validation_rules_platform")
+ * @ORM\Entity
+ */
+class ValidationRulesPlatform
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data_point", type="string", length=200, nullable=true)
+     */
+    private $dataPoint;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="locale_id", type="integer", nullable=true)
+     */
+    private $localeId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="required", type="integer", nullable=true)
+     */
+    private $required;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="condition", type="text", nullable=true)
+     */
+    private $condition;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="default_value", type="string", length=200, nullable=true)
+     */
+    private $defaultValue;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Platforms
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Platforms")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="platform_id", referencedColumnName="id")
+     * })
+     */
+    private $platform;
+
+
+}

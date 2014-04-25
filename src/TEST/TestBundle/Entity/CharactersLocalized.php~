@@ -1,0 +1,69 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CharactersLocalized
+ *
+ * @ORM\Table(name="characters_localized")
+ * @ORM\Entity
+ */
+class CharactersLocalized
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="text", nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Characters
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Characters")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id")
+     * })
+     */
+    private $character;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Languages
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Languages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="language_id", referencedColumnName="id")
+     * })
+     */
+    private $language;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Titles
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Titles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="title_id", referencedColumnName="id")
+     * })
+     */
+    private $title;
+
+
+}

@@ -1,0 +1,170 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Titles
+ *
+ * @ORM\Table(name="titles")
+ * @ORM\Entity
+ */
+class Titles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="text", nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secondary_title", type="text", nullable=true)
+     */
+    private $secondaryTitle;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="episode_number", type="integer", nullable=true)
+     */
+    private $episodeNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="episode_production_number", type="string", length=20, nullable=true)
+     */
+    private $episodeProductionNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="synopsis_short", type="text", nullable=true)
+     */
+    private $synopsisShort;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="synopsis_long", type="text", nullable=true)
+     */
+    private $synopsisLong;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="production_company", type="text", nullable=true)
+     */
+    private $productionCompany;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="production_country_id", type="integer", nullable=true)
+     */
+    private $productionCountryId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="copyright_cline", type="text", nullable=true)
+     */
+    private $copyrightCline;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="original_release_date", type="date", nullable=true)
+     */
+    private $originalReleaseDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="isan", type="text", nullable=true)
+     */
+    private $isan;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="upc", type="text", nullable=true)
+     */
+    private $upc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="locale_id", type="integer", nullable=true)
+     */
+    private $localeId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="eidr", type="string", length=200, nullable=true)
+     */
+    private $eidr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Franchises
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Franchises")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="franchise_id", referencedColumnName="id")
+     * })
+     */
+    private $franchise;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Series
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Series")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="series_id", referencedColumnName="id")
+     * })
+     */
+    private $series;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Seasons
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Seasons")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="season_id", referencedColumnName="id")
+     * })
+     */
+    private $season;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\TitleTypes
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\TitleTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_id", referencedColumnName="id")
+     * })
+     */
+    private $type;
+
+
+}

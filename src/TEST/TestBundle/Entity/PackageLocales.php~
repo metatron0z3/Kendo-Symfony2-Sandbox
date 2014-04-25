@@ -1,0 +1,73 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PackageLocales
+ *
+ * @ORM\Table(name="package_locales")
+ * @ORM\Entity
+ */
+class PackageLocales
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="primary", type="boolean", nullable=false)
+     */
+    private $primary;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="localize_chapters", type="boolean", nullable=true)
+     */
+    private $localizeChapters;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ts", type="datetime", nullable=false)
+     */
+    private $ts;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Packages
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Packages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="package_id", referencedColumnName="id")
+     * })
+     */
+    private $package;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Locales
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Locales")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="locale_id", referencedColumnName="id")
+     * })
+     */
+    private $locale;
+
+
+}

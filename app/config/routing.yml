@@ -1,0 +1,5 @@
+kendo:
+    resource: "@KendoBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

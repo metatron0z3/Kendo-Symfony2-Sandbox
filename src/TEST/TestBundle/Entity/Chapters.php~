@@ -1,0 +1,115 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Chapters
+ *
+ * @ORM\Table(name="chapters")
+ * @ORM\Entity
+ */
+class Chapters
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="chapter_number", type="boolean", nullable=false)
+     */
+    private $chapterNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title_locale", type="text", nullable=true)
+     */
+    private $titleLocale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="text", nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="start_time", type="text", nullable=false)
+     */
+    private $startTime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="chapter_artwork_time", type="text", nullable=true)
+     */
+    private $chapterArtworkTime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="artwork_file_name", type="text", nullable=true)
+     */
+    private $artworkFileName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="checksum", type="text", nullable=true)
+     */
+    private $checksum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="checksum_type", type="text", nullable=true)
+     */
+    private $checksumType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="size", type="text", nullable=true)
+     */
+    private $size;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Languages
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Languages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="language_id", referencedColumnName="id")
+     * })
+     */
+    private $language;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Titles
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Titles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="title_id", referencedColumnName="id")
+     * })
+     */
+    private $title2;
+
+
+}

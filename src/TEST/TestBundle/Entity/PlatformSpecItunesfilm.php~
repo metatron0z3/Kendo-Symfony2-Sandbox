@@ -1,0 +1,172 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PlatformSpecItunesfilm
+ *
+ * @ORM\Table(name="platform_spec_itunesfilm")
+ * @ORM\Entity
+ */
+class PlatformSpecItunesfilm
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="delivery_batch_package_id", type="integer", nullable=true)
+     */
+    private $deliveryBatchPackageId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="container_id", type="integer", nullable=true)
+     */
+    private $containerId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subtype", type="text", nullable=true)
+     */
+    private $subtype;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vendor_offer_code", type="text", nullable=true)
+     */
+    private $vendorOfferCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vendor_id", type="text", nullable=true)
+     */
+    private $vendorId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="territory", type="text", nullable=true)
+     */
+    private $territory;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cleared_for_sale", type="text", nullable=true)
+     */
+    private $clearedForSale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cleared_for_hd_sale", type="text", nullable=true)
+     */
+    private $clearedForHdSale;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wholesale_price_tier", type="integer", nullable=true)
+     */
+    private $wholesalePriceTier;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="hd_wholesale_price_tier", type="integer", nullable=true)
+     */
+    private $hdWholesalePriceTier;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="preorder_sales_start_date", type="text", nullable=true)
+     */
+    private $preorderSalesStartDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sales_start_date", type="text", nullable=true)
+     */
+    private $salesStartDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cleared_for_vod", type="text", nullable=true)
+     */
+    private $clearedForVod;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vod_type", type="text", nullable=true)
+     */
+    private $vodType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="available_for_vod_date", type="text", nullable=true)
+     */
+    private $availableForVodDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="unavailable_for_vod_date", type="text", nullable=true)
+     */
+    private $unavailableForVodDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="physical_release_date", type="text", nullable=true)
+     */
+    private $physicalReleaseDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cleared_for_hd_vod", type="text", nullable=true)
+     */
+    private $clearedForHdVod;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="chapter_timecode_format", type="text", nullable=true)
+     */
+    private $chapterTimecodeFormat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phonetic_title", type="text", nullable=true)
+     */
+    private $phoneticTitle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+
+}

@@ -1,0 +1,204 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Assets
+ *
+ * @ORM\Table(name="assets")
+ * @ORM\Entity
+ */
+class Assets
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mam_id", type="string", length=45, nullable=true)
+     */
+    private $mamId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="file_name", type="string", length=300, nullable=true)
+     */
+    private $fileName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="network_path", type="text", nullable=true)
+     */
+    private $networkPath;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_ts", type="datetime", nullable=true)
+     */
+    private $createdTs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="size", type="string", length=300, nullable=true)
+     */
+    private $size;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="checksum", type="string", length=300, nullable=true)
+     */
+    private $checksum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="checksum_type", type="text", nullable=true)
+     */
+    private $checksumType;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="crop_top", type="integer", nullable=true)
+     */
+    private $cropTop;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="crop_bottom", type="integer", nullable=true)
+     */
+    private $cropBottom;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="crop_left", type="integer", nullable=true)
+     */
+    private $cropLeft;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="crop_right", type="integer", nullable=true)
+     */
+    private $cropRight;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_burned_subtitles_locale", type="text", nullable=true)
+     */
+    private $imageBurnedSubtitlesLocale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_burned_forced_narrative_locale", type="text", nullable=true)
+     */
+    private $imageBurnedForcedNarrativeLocale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_textless_master", type="text", nullable=true)
+     */
+    private $imageTextlessMaster;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="territory", type="text", nullable=true)
+     */
+    private $territory;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ts", type="datetime", nullable=false)
+     */
+    private $ts;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Languages
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Languages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="language_id", referencedColumnName="id")
+     * })
+     */
+    private $language;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Titles
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Titles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="title_id", referencedColumnName="id")
+     * })
+     */
+    private $title;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\AssetTypes
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\AssetTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="asset_type_id", referencedColumnName="id")
+     * })
+     */
+    private $assetType;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Locales
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Locales")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="locale_id", referencedColumnName="id")
+     * })
+     */
+    private $locale;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Offices
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Offices")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="office_id", referencedColumnName="id")
+     * })
+     */
+    private $office;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\FileTypes
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\FileTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="file_type_id", referencedColumnName="id")
+     * })
+     */
+    private $fileType;
+
+
+}

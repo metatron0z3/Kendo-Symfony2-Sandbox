@@ -1,0 +1,25 @@
+TEST\TestBundle\Entity\Titles:
+    type: entity
+    table: titles
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        title:
+            type: text
+            nullable: true
+    manyToOne:
+        franchise:
+            targetEntity: Franchises
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                franchise_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

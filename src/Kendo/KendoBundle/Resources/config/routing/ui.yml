@@ -1,0 +1,27 @@
+ui_calendar:
+    pattern:  /calendar
+    defaults: { _controller: "KendoBundle:UI:calendar" }
+    
+ui_datepicker:
+    pattern:  /datepicker
+    defaults: { _controller: "KendoBundle:UI:datepicker" }
+    
+ui_dropdownlist:
+    pattern:  /dropdownlist
+    defaults: { _controller: "KendoBundle:UI:dropdownlist" }
+    
+ui_grid:
+    pattern:  /grid
+    defaults: { _controller: "KendoBundle:UI:grid" }
+    
+ui_tooltip:
+    pattern:  /tooltip
+    defaults: { _controller: "KendoBundle:UI:tooltip" }
+    
+ui_treeview:
+    pattern:  /treeview
+    defaults: { _controller: "KendoBundle:UI:treeview" }
+
+ui_upload:
+    pattern:  /upload
+    defaults: { _controller: "KendoBundle:UI:upload" }

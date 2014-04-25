@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<br/><br/>
+<h1>Add Title</h1>
+    {# form(form) #}
+<!--<pre>
+{# dump(thing) #}
+</pre>-->
+<pre>
+{{ dump(dropdownlist) }}
+</pre>
+    
+    <form action="" > 
+        <div>
+            <h4>Choose Client:</h4>
+            <input id="dropdownlist" />
+            {% include('TestBundle:clients:select.html.twig') %}
+        </div>
+
+        <br/><br/>
+        <div>
+            <h4>Enter Title:</h4>
+            <input type="text" name="title" size="60" placeholder="" >
+            <input type="checkbox" name="hasFranchise" value=""> part of Franchise<br/><br/>
+            <button id="button" type="submit">Add Title</button>
+            
+        </div>   
+    </form>
+    <script>
+        $("#dropdownlist").kendoDropDownList({
+          dataSource: {
+            data: [
+                {% for client in clients %}
+                    "{{ client }}",
+                {% endfor %}
+            ]
+          }
+        });
+        $("#button").kendoButton({
+            enable: true
+        });  
+    </script>
+    
+    <!--<ul class="record_actions"><li><a href="{# path('titles') #}">Back to the list</a></li></ul>-->
+{% endblock %}

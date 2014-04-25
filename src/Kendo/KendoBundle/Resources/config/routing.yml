@@ -1,0 +1,27 @@
+kendo_homepage:
+    pattern:  /kendo
+    defaults: { _controller: KendoBundle:Default:index }
+    
+kendo_data:
+    pattern:  /kendo/data
+    defaults: { _controller: KendoBundle:Data:index }
+
+kendo_data_datasource:
+    pattern:  /kendo/data/datasource
+    defaults: { _controller: "KendoBundle:Data:datasource" }
+
+kendo_data_heirarchicaldatasource:
+    pattern:  /kendo/data/heirarchicaldatasource
+    defaults: { _controller: "KendoBundle:Data:heirarchicaldatasource" }
+    
+kendo_ui:
+    pattern:  /kendo/ui
+    defaults: { _controller: KendoBundle:UI:index }
+    
+kendo_ui_calendar:
+    pattern:  /kendo/ui/calendar/{id}
+    defaults: { _controller: "KendoBundle:UI:calendar" }
+    
+kendo_ui_dropdownlist:
+    pattern:  /kendo/ui/dropdownlist
+    defaults: { _controller: "KendoBundle:UI:dropdownlist" }

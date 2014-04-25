@@ -1,0 +1,49 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserSavedSearch
+ *
+ * @ORM\Table(name="user_saved_search")
+ * @ORM\Entity
+ */
+class UserSavedSearch
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="search_label", type="text", nullable=false)
+     */
+    private $searchLabel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="search_sql", type="text", nullable=false)
+     */
+    private $searchSql;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Users
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+
+}

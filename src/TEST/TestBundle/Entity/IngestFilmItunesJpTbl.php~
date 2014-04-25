@@ -1,0 +1,368 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * IngestFilmItunesJpTbl
+ *
+ * @ORM\Table(name="ingest_film_itunes_jp_tbl")
+ * @ORM\Entity
+ */
+class IngestFilmItunesJpTbl
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="file_name", type="text", nullable=false)
+     */
+    private $fileName;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Provider", type="string", length=250, nullable=true)
+     */
+    private $provider;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Type", type="string", length=100, nullable=true)
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Subtype", type="string", length=100, nullable=true)
+     */
+    private $subtype;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ProductId", type="string", length=50, nullable=true)
+     */
+    private $productid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="VendorID", type="string", length=250, nullable=true)
+     */
+    private $vendorid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TitleName", type="string", length=250, nullable=true)
+     */
+    private $titlename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DateRelease", type="string", length=50, nullable=true)
+     */
+    private $daterelease;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Copyright", type="string", length=500, nullable=true)
+     */
+    private $copyright;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Summary", type="text", nullable=true)
+     */
+    private $summary;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="RT_Mins", type="integer", nullable=true)
+     */
+    private $rtMins;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CountryOfOrginId", type="string", length=20, nullable=true)
+     */
+    private $countryoforginid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LanguageId", type="string", length=50, nullable=true)
+     */
+    private $languageid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Genres", type="string", length=500, nullable=true)
+     */
+    private $genres;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ProductionCompany", type="string", length=400, nullable=true)
+     */
+    private $productioncompany;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ISAN", type="string", length=50, nullable=true)
+     */
+    private $isan;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SummaryBoxOffice", type="string", length=100, nullable=true)
+     */
+    private $summaryboxoffice;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Actors", type="text", nullable=true)
+     */
+    private $actors;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Voices", type="text", nullable=true)
+     */
+    private $voices;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Directors", type="text", nullable=true)
+     */
+    private $directors;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Producers", type="text", nullable=true)
+     */
+    private $producers;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Writers", type="text", nullable=true)
+     */
+    private $writers;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Composers", type="text", nullable=true)
+     */
+    private $composers;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Actors_1", type="text", nullable=true)
+     */
+    private $actors1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Voices_1", type="text", nullable=true)
+     */
+    private $voices1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Staff_1", type="text", nullable=true)
+     */
+    private $staff1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Phonetic_Title", type="text", nullable=true)
+     */
+    private $phoneticTitle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LocalTitle_1", type="text", nullable=true)
+     */
+    private $localtitle1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LocalSynopsis_1", type="text", nullable=true)
+     */
+    private $localsynopsis1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LocalCopyright_1", type="text", nullable=true)
+     */
+    private $localcopyright1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LocalTheatricalReleaseDate_1", type="string", length=50, nullable=true)
+     */
+    private $localtheatricalreleasedate1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Language_1", type="string", length=20, nullable=true)
+     */
+    private $language1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Territory_1", type="string", length=20, nullable=true)
+     */
+    private $territory1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="RatingSystem_1", type="string", length=50, nullable=true)
+     */
+    private $ratingsystem1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="RatingValue_1", type="text", nullable=true)
+     */
+    private $ratingvalue1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ClearedForSale_1", type="string", length=20, nullable=true)
+     */
+    private $clearedforsale1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ClearedForHDSale_1", type="string", length=20, nullable=true)
+     */
+    private $clearedforhdsale1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PreOrderSalesStartDate_1", type="string", length=20, nullable=true)
+     */
+    private $preordersalesstartdate1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="T1_Price_Interval_Tier_1_Start_Date", type="string", length=20, nullable=true)
+     */
+    private $t1PriceIntervalTier1StartDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="T1_Price_Interval_Tier_2_Start_Date", type="string", length=20, nullable=true)
+     */
+    private $t1PriceIntervalTier2StartDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="T1_Price_Interval_Tier_3_Start_Date", type="string", length=20, nullable=true)
+     */
+    private $t1PriceIntervalTier3StartDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="T1_Price_Interval_EST_EndDate", type="string", length=20, nullable=true)
+     */
+    private $t1PriceIntervalEstEnddate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ClearedForVOD_1", type="string", length=20, nullable=true)
+     */
+    private $clearedforvod1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ClearedForHDVOD_1", type="string", length=20, nullable=true)
+     */
+    private $clearedforhdvod1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="VODType_1", type="string", length=20, nullable=true)
+     */
+    private $vodtype1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="StartVODDate_1", type="string", length=20, nullable=true)
+     */
+    private $startvoddate1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EndVODDate_1", type="string", length=20, nullable=true)
+     */
+    private $endvoddate1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PhysicalReleaseDate_1", type="string", length=20, nullable=true)
+     */
+    private $physicalreleasedate1;
+
+
+}

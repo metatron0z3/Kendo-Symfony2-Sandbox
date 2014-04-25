@@ -1,0 +1,60 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Languages
+ *
+ * @ORM\Table(name="languages")
+ * @ORM\Entity
+ */
+class Languages
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="text", nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="iso6391", type="text", nullable=true)
+     */
+    private $iso6391;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="iso6392", type="text", nullable=true)
+     */
+    private $iso6392;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="region", type="text", nullable=true)
+     */
+    private $region;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+
+}

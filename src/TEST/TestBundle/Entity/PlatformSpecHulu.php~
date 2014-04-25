@@ -1,0 +1,53 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PlatformSpecHulu
+ *
+ * @ORM\Table(name="platform_spec_hulu")
+ * @ORM\Entity
+ */
+class PlatformSpecHulu
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="delivery_batch_package_id", type="integer", nullable=true)
+     */
+    private $deliveryBatchPackageId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="container_id", type="integer", nullable=true)
+     */
+    private $containerId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vendor_id", type="text", nullable=true)
+     */
+    private $vendorId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+
+}

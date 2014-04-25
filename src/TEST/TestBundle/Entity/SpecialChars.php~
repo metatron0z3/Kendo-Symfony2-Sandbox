@@ -1,0 +1,56 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SpecialChars
+ *
+ * @ORM\Table(name="special_chars")
+ * @ORM\Entity
+ */
+class SpecialChars
+{
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="id", type="boolean", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="char", type="text", nullable=false)
+     */
+    private $char;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="char_description", type="text", nullable=false)
+     */
+    private $charDescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Languages
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Languages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="language_id", referencedColumnName="id")
+     * })
+     */
+    private $language;
+
+
+}

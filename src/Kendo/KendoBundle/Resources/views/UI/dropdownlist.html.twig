@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<br/><br/><br/><br/>
+    <h1>Dropdownlist</h1>
+    
+    <pre><h4>$sampledata</h4>{{ dump(sampledata) }}</pre>
+    <pre><h4>$jsonsample - json_encode w/ JSON_FORCE_OBJECT as 2nd arg</h4>{{ dump(jsonsample) }}</pre>
+    <pre>
+        <h4>Core Object w/$sampledata - </h4>
+        <p>new \Kendo\UI\DropDownList($sampledata);</p>
+        {{ dump(dropdownlist) }}    
+    </pre>
+    
+    <input id="dropdownlist" />
+    <script>
+        $("#dropdownlist").kendoDropDownList({
+          dataSource: {
+            data: ["option1", "option2", "option3", "option4"]
+          }
+        });
+    </script>
+
+    
+    
+
+{% endblock %}

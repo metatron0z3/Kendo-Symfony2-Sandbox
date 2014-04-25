@@ -1,0 +1,69 @@
+<?php
+
+namespace SDI\ChameleonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PackageAssets
+ *
+ * @ORM\Table(name="package_assets")
+ * @ORM\Entity
+ */
+class PackageAssets
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ts", type="datetime", nullable=false)
+     */
+    private $ts;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\PackageLocales
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\PackageLocales")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="package_locale_id", referencedColumnName="id")
+     * })
+     */
+    private $packageLocale;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\Assets
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\Assets")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="asset_id", referencedColumnName="id")
+     * })
+     */
+    private $asset;
+
+    /**
+     * @var \SDI\ChameleonBundle\Entity\AssetTypes
+     *
+     * @ORM\ManyToOne(targetEntity="SDI\ChameleonBundle\Entity\AssetTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="asset_type_id", referencedColumnName="id")
+     * })
+     */
+    private $assetType;
+
+
+}
